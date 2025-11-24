@@ -15,7 +15,7 @@ app.use(express.json());
 app.get('/api/health', (req: Request, res: Response) => {
   res.json({
     status: 'success',
-    message: 'Hello World! Apartment API is running 🏢',
+    message: 'Hello World! Apartment API is running',
     timestamp: new Date().toISOString()
   });
 });
@@ -48,7 +48,7 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 Server is running on port ${PORT}`);
-  console.log(`📍 Health check: http://localhost:${PORT}/api/health`);
-  console.log(`📍 Apartments: http://localhost:${PORT}/api/apartments`);
+  console.log(` Server is running on port ${PORT}`);
+  console.log(` Health check: http://localhost:${PORT}/api/health`);
+  console.log(` Apartments: http://localhost:${PORT}/api/apartments`);
 });
