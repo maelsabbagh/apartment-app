@@ -14,14 +14,8 @@ export class ApartmentService
 
     async getAllApartments(filters:ApartmentFilterDto)
     {
-        try
-        {
-            return await this.apartmentRepository.FindAll(filters);
-        }
-        catch(error)
-        {
-            throw new Error("failed");
-        }
+
+        return await this.apartmentRepository.FindAll(filters);
     }
 
     async getApartmentById(id:number)
@@ -31,7 +25,7 @@ export class ApartmentService
             const aparment = await this.apartmentRepository.findById(id);
             if(!aparment)
             {
-                throw new Error("Apartment not found");
+                throw new ReferenceError("Apartment not found");
             }
 
             return aparment;
@@ -44,8 +38,7 @@ export class ApartmentService
 
     async createApartment(aparment:CreateApartmentDTO)
     {
-        try
-        {
+
             if(!aparment.unitName || !aparment.unitNumber || !aparment.project)
             {
                 throw new Error("missing fields");
@@ -62,11 +55,8 @@ export class ApartmentService
             }
 
             return await this.apartmentRepository.create(aparment);
-        }
-        catch(error)
-        {
-            throw error;
-        }
+        
+
     
     }
 

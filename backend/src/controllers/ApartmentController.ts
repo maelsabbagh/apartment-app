@@ -46,7 +46,7 @@ export class ApartmentController
         try {
             const id = parseInt(req.params.id); // Fixed: parseInt instead of Number
 
-            if (isNaN(id)) {
+            if (isNaN(id) || id <=0) {
                 res.status(400).json({
                     status: 'error',
                     message: 'Invalid apartment ID',
@@ -63,7 +63,7 @@ export class ApartmentController
         } 
         catch (error)
         {
-            if (error instanceof Error && error.message === 'Apartment not found') {
+            if (error instanceof ReferenceError) {
                 res.status(404).json({
                     status: 'error',
                     message: 'Apartment not found',

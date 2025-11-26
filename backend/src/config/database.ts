@@ -11,7 +11,7 @@ export const AppDataSource = new DataSource({
   username: process.env.DB_USERNAME || 'springstudent',
   password: process.env.DB_PASSWORD || 'springstudent',
   database: process.env.DB_DATABASE || 'apartment_db',
-  synchronize: true, // ⭐ This creates tables automatically - only use in development!
+  synchronize: true, // This creates tables automatically - only use in development!
   logging: process.env.NODE_ENV === 'development',
   entities: [Apartment], // Import entities directly instead of using path
   subscribers: [],
