@@ -87,12 +87,207 @@ Query params: search, project, bedrooms, minPrice, maxPrice, page, limit
 
 Response: JSON with `items`, `meta` (pagination).
 
+### Response (example)
+```json
+{
+    "status": "success",
+    "data": [
+        {
+            "id": 46,
+            "unitName": "Modern Studio",
+            "unitNumber": "A-102",
+            "project": "Downtown Plaza",
+            "bedrooms": 4,
+            "bathrooms": 1,
+            "area": "55.00",
+            "floor": 3,
+            "price": "180000.00",
+            "description": "Cozy studio apartment in the heart of downtown. Perfect for young professionals or students. Walking distance to metro and shopping centers.",
+            "imageUrl": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2",
+            "isAvailable": true,
+            "createdAt": "2025-11-27T15:49:33.295Z",
+            "updatedAt": "2025-11-27T15:49:33.295Z"
+        },
+        {
+            "id": 1,
+            "unitName": "Modern City Studio",
+            "unitNumber": "A-101",
+            "project": "Downtown Plaza",
+            "bedrooms": 0,
+            "bathrooms": 1,
+            "area": "45.00",
+            "floor": 1,
+            "price": "150000.00",
+            "description": "Compact and efficient studio perfect for singles. Close to the metro.",
+            "imageUrl": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800",
+            "isAvailable": true,
+            "createdAt": "2025-11-27T15:05:23.000Z",
+            "updatedAt": "2025-11-27T15:05:23.000Z"
+        },
+        {
+            "id": 2,
+            "unitName": "The Urban Pad",
+            "unitNumber": "A-102",
+            "project": "Downtown Plaza",
+            "bedrooms": 1,
+            "bathrooms": 1,
+            "area": "60.00",
+            "floor": 1,
+            "price": "195000.00",
+            "description": "Stylish one-bedroom with open plan living area and city views.",
+            "imageUrl": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800",
+            "isAvailable": true,
+            "createdAt": "2025-11-27T15:05:23.000Z",
+            "updatedAt": "2025-11-27T15:05:23.000Z"
+        },
+        {
+            "id": 3,
+            "unitName": "Minimalist Haven",
+            "unitNumber": "A-204",
+            "project": "Downtown Plaza",
+            "bedrooms": 1,
+            "bathrooms": 1,
+            "area": "58.00",
+            "floor": 2,
+            "price": "185000.00",
+            "description": "Bright and airy apartment with minimalist design.",
+            "imageUrl": "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=800",
+            "isAvailable": false,
+            "createdAt": "2025-11-27T15:05:23.000Z",
+            "updatedAt": "2025-11-27T15:05:23.000Z"
+        },
+        {
+            "id": 4,
+            "unitName": "Corner Executive Suite",
+            "unitNumber": "A-301",
+            "project": "Downtown Plaza",
+            "bedrooms": 1,
+            "bathrooms": 1,
+            "area": "70.00",
+            "floor": 3,
+            "price": "220000.00",
+            "description": "Large corner unit with extra windows and premium finishings.",
+            "imageUrl": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800",
+            "isAvailable": true,
+            "createdAt": "2025-11-27T15:05:23.000Z",
+            "updatedAt": "2025-11-27T15:05:23.000Z"
+        },
+        {
+            "id": 5,
+            "unitName": "Cozy Downtown Retreat",
+            "unitNumber": "A-305",
+            "project": "Downtown Plaza",
+            "bedrooms": 0,
+            "bathrooms": 1,
+            "area": "48.00",
+            "floor": 3,
+            "price": "160000.00",
+            "description": "Warm and inviting studio in the heart of the action.",
+            "imageUrl": "https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=800",
+            "isAvailable": true,
+            "createdAt": "2025-11-27T15:05:23.000Z",
+            "updatedAt": "2025-11-27T15:05:23.000Z"
+        },
+        {
+            "id": 6,
+            "unitName": "The Loft Style",
+            "unitNumber": "A-402",
+            "project": "Downtown Plaza",
+            "bedrooms": 1,
+            "bathrooms": 1,
+            "area": "65.00",
+            "floor": 4,
+            "price": "210000.00",
+            "description": "Industrial chic design with high ceilings and exposed brick.",
+            "imageUrl": "https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=800",
+            "isAvailable": true,
+            "createdAt": "2025-11-27T15:05:23.000Z",
+            "updatedAt": "2025-11-27T15:05:23.000Z"
+        },
+        {
+            "id": 7,
+            "unitName": "Skyline Studio",
+            "unitNumber": "A-501",
+            "project": "Downtown Plaza",
+            "bedrooms": 0,
+            "bathrooms": 1,
+            "area": "50.00",
+            "floor": 5,
+            "price": "175000.00",
+            "description": "Top floor studio offering breathtaking sunset views.",
+            "imageUrl": "https://images.unsplash.com/photo-1536376072261-38c75010e6c9?auto=format&fit=crop&w=800",
+            "isAvailable": true,
+            "createdAt": "2025-11-27T15:05:23.000Z",
+            "updatedAt": "2025-11-27T15:05:23.000Z"
+        },
+        {
+            "id": 8,
+            "unitName": "Metro One-Bed",
+            "unitNumber": "A-505",
+            "project": "Downtown Plaza",
+            "bedrooms": 1,
+            "bathrooms": 1,
+            "area": "62.00",
+            "floor": 5,
+            "price": "205000.00",
+            "description": "Convenient living spaces right next to the central station.",
+            "imageUrl": "https://images.unsplash.com/photo-1484154218962-a1c002085d2f?auto=format&fit=crop&w=800",
+            "isAvailable": true,
+            "createdAt": "2025-11-27T15:05:23.000Z",
+            "updatedAt": "2025-11-27T15:05:23.000Z"
+        },
+        {
+            "id": 9,
+            "unitName": "Family Starter Home",
+            "unitNumber": "B-101",
+            "project": "Sunset Heights",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "area": "95.00",
+            "floor": 1,
+            "price": "320000.00",
+            "description": "Spacious ground floor unit with a small private patio.",
+            "imageUrl": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800",
+            "isAvailable": true,
+            "createdAt": "2025-11-27T15:05:23.000Z",
+            "updatedAt": "2025-11-27T15:05:23.000Z"
+        }
+    ],
+    "total": 46,
+    "page": 1,
+    "limit": 10,
+    "totalPages": 5
+}
+```
+
 ### Get apartment details
 
 ```
 GET /api/apartments/:id
 ```
-
+Request: `api/apartments/2`
+### Response (example)
+```json
+{
+    "status": "success",
+    "data": {
+        "id": 2,
+        "unitName": "The Urban Pad",
+        "unitNumber": "A-102",
+        "project": "Downtown Plaza",
+        "bedrooms": 1,
+        "bathrooms": 1,
+        "area": "60.00",
+        "floor": 1,
+        "price": "195000.00",
+        "description": "Stylish one-bedroom with open plan living area and city views.",
+        "imageUrl": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800",
+        "isAvailable": true,
+        "createdAt": "2025-11-27T15:05:23.000Z",
+        "updatedAt": "2025-11-27T15:05:23.000Z"
+    }
+}
+```
 ### Create apartment
 
 ```
@@ -103,7 +298,7 @@ Body: { unitName, unitNumber, project, bedrooms, bathrooms, area, floor, price, 
 
 ## Examples
 
-### Create an apartment — request (JSON)
+### Create an apartment — request (JSON) body
 
 ```json
 {
