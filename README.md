@@ -15,7 +15,7 @@
 7. [Docker commands](#docker-commands)
 8. [Project structure](#project-structure)
 9. [Environment variables](#environment-variables)
-10. [Development notes](#development-notes)
+10. [Notes](#notes)
 
 ---
 
