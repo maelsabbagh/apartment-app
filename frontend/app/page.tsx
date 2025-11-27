@@ -14,7 +14,6 @@ export default function Home() {
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-  const [projects, setProjects] = useState<string[]>([]);
 
   useEffect(() => {
     fetchApartments();
@@ -29,11 +28,6 @@ export default function Home() {
       setTotal(response.total);
       setTotalPages(response.totalPages);
 
-      // Extract unique projects
-      const uniqueProjects = Array.from(
-        new Set(response.data.map((apt) => apt.project))
-      );
-      setProjects(uniqueProjects);
     } catch (err) {
       setError('Failed to load apartments. Make sure the backend is running.');
       console.error(err);
@@ -62,7 +56,7 @@ export default function Home() {
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
         {/* Search and Filter */}
-        <SearchFilter onFilterChange={handleFilterChange} projects={projects} />
+        <SearchFilter onFilterChange={handleFilterChange} />
 
         {/* Loading State */}
         {loading && (
