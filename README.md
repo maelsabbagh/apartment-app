@@ -47,7 +47,7 @@ A simple, production‑ready apartment management application built with a Node.
 
 ```bash
 # from repo root
-docker-compose up --build
+docker-compose up
 ```
 
 3. Create the MySQL database (if not auto-created) or load seed data.
@@ -73,6 +73,7 @@ mysql> USE apartment_db;
 
 > **Note:** `MYSQL_USER` is commented out in `docker-compose.yml` to avoid conflicts with an existing root user. Uncomment if you want a dedicated non-root DB user.
 
+Frontend is running on port `3000`
 ## API Reference
 
 Base URL: `http://localhost:5000/api`
@@ -210,7 +211,7 @@ DB_DATABASE=apartment_db
 NEXT_PUBLIC_API_URL=http://localhost:5000
 ```
 
-## Development notes
+## Notes
 
 * Backend runs on **port 5000** (configurable via `PORT`).
 * Frontend runs on **port 3000**.
