@@ -7,16 +7,17 @@ services:
     container_name: apartment_mysql
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root123
-      MYSQL_DATABASE: apartment_db
-      MYSQL_USER: springstudent
-      MYSQL_PASSWORD: springstudent
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     ports:
       - "3306:3306"
     volumes:
       - mysql_data:/var/lib/mysql
+      #- ./mysql-init:/docker-entrypoint-initdb.d
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot123"]
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD}"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -33,13 +34,13 @@ services:
     ports:
       - "5000:5000"
     environment:
-      NODE_ENV: production
-      PORT: 5000
+      NODE_ENV: ${NODE_ENV}
+      PORT: ${PORT}
       DB_HOST: mysql
       DB_PORT: 3306
-      DB_USERNAME: springstudent
-      DB_PASSWORD: springstudent
-      DB_DATABASE: apartment_db
+      DB_USERNAME: ${MYSQL_USER}
+      DB_PASSWORD: ${MYSQL_PASSWORD}
+      DB_DATABASE: ${MYSQL_DATABASE}
     depends_on:
       mysql:
         condition: service_healthy
