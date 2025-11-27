@@ -22,10 +22,12 @@ Full-stack apartment listing application with search and filter capabilities.
 
 ## Quick Start
 
-- Update `.env` with your credentials
+- Update `.env` with your credentials if needed
 - run docker compose up
 - Create MySQL database: `apartment_db` 
 - initially no apartment data so you can use the post method with postman to create new apartments
+- you can run also ./seed-data.sql scrip to initalize database
+- Note: in docker compose I have commented MYSQL_USER: ${MYSQL_USER} to avoid conflict with current existing root user, you may need to uncomment this
 
 **POST URL: /api/apartments**
 
