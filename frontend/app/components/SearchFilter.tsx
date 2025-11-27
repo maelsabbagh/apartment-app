@@ -5,12 +5,10 @@ import { ApartmentFilters } from '../types/Apartment';
 
 interface SearchFilterProps {
   onFilterChange: (filters: ApartmentFilters) => void;
-  projects: string[];
 }
 
-export default function SearchFilter({ onFilterChange, projects }: SearchFilterProps) {
+export default function SearchFilter({ onFilterChange }: SearchFilterProps) {
   const [search, setSearch] = useState('');
-  const [project, setProject] = useState('');
   const [bedrooms, setBedrooms] = useState('');
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
@@ -18,7 +16,6 @@ export default function SearchFilter({ onFilterChange, projects }: SearchFilterP
   const handleSearch = () => {
     const filters: ApartmentFilters = {
       search: search || undefined,
-      project: project || undefined,
       bedrooms: bedrooms ? parseInt(bedrooms) : undefined,
       minPrice: minPrice ? parseFloat(minPrice) : undefined,
       maxPrice: maxPrice ? parseFloat(maxPrice) : undefined,
@@ -28,7 +25,6 @@ export default function SearchFilter({ onFilterChange, projects }: SearchFilterP
 
   const handleReset = () => {
     setSearch('');
-    setProject('');
     setBedrooms('');
     setMinPrice('');
     setMaxPrice('');
@@ -52,25 +48,6 @@ export default function SearchFilter({ onFilterChange, projects }: SearchFilterP
             onChange={(e) => setSearch(e.target.value)}
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
-        </div>
-
-        {/* Project Filter */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Project
-          </label>
-          <select
-            value={project}
-            onChange={(e) => setProject(e.target.value)}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          >
-            <option value="">All Projects</option>
-            {projects.map((proj) => (
-              <option key={proj} value={proj}>
-                {proj}
-              </option>
-            ))}
-          </select>
         </div>
 
         {/* Bedrooms Filter */}
