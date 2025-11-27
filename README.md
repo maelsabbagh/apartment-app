@@ -52,6 +52,7 @@ docker-compose up
 
 3. Create the MySQL database (if not auto-created) or load seed data.
 
+initially database is empty with no data so you can make post request with postman or run seed-data.sql (initialize database)
 ### Initialize DB manually (example)
 
 ```bash
